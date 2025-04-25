@@ -38,4 +38,5 @@ message UserInfoRequest {
 message UserInfoResponse {
   string id = 1;
   string email = 2;
+  bool isAdmin = 3;
 }
