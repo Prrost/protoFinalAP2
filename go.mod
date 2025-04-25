@@ -1,4 +1,4 @@
-module protoFinalAP2
+module github.com/Prrost/protoFinalAP2
 
 go 1.23.0
 
