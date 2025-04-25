@@ -285,6 +285,7 @@ type UserInfoResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Email         string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+	IsAdmin       bool                   `protobuf:"varint,3,opt,name=isAdmin,proto3" json:"isAdmin,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -333,6 +334,13 @@ func (x *UserInfoResponse) GetEmail() string {
 	return ""
 }
 
+func (x *UserInfoResponse) GetIsAdmin() bool {
+	if x != nil {
+		return x.IsAdmin
+	}
+	return false
+}
+
 var File_user_user_proto protoreflect.FileDescriptor
 
 const file_user_user_proto_rawDesc = "" +
@@ -352,10 +360,11 @@ const file_user_user_proto_rawDesc = "" +
 	"\amessage\x18\x02 \x01(\tR\amessage\"7\n" +
 	"\x0fUserInfoRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
-	"\x05email\x18\x02 \x01(\tR\x05email\"8\n" +
+	"\x05email\x18\x02 \x01(\tR\x05email\"R\n" +
 	"\x10UserInfoResponse\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
-	"\x05email\x18\x02 \x01(\tR\x05email2\xc5\x01\n" +
+	"\x05email\x18\x02 \x01(\tR\x05email\x12\x18\n" +
+	"\aisAdmin\x18\x03 \x01(\bR\aisAdmin2\xc5\x01\n" +
 	"\vUserService\x12=\n" +
 	"\fRegisterUser\x12\x15.user.RegisterRequest\x1a\x16.user.RegisterResponse\x129\n" +
 	"\x10AuthenticateUser\x12\x11.user.AuthRequest\x1a\x12.user.AuthResponse\x12<\n" +
