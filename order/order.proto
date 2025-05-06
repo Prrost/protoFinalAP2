@@ -1,0 +1,26 @@
+syntax = "proto3";
+package order;
+
+option go_package = "github.com/Prrost/protoFinalAP2/order";
+
+// Сервис для работы с заказами
+service OrderService {
+  rpc CreateOrder(CreateOrderReq) returns (CreateOrderRes);
+  rpc ReturnOrder(ReturnOrderReq) returns (ReturnOrderRes);
+}
+
+message CreateOrderReq {
+  int64 user_id = 1;
+  int64 book_id = 2;
+  int32 due_days = 3;
+}
+
+message CreateOrderRes {
+  int64 order_id = 1;
+}
+
+message ReturnOrderReq {
+  int64 order_id = 1;
+}
+
+message ReturnOrderRes {}
