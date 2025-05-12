@@ -23,7 +23,7 @@ const (
 
 type CreateOrderReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserEmail     string                 `protobuf:"bytes,1,opt,name=user_email,json=userEmail,proto3" json:"user_email,omitempty"`
 	BookId        int64                  `protobuf:"varint,2,opt,name=book_id,json=bookId,proto3" json:"book_id,omitempty"`
 	DueDays       int32                  `protobuf:"varint,3,opt,name=due_days,json=dueDays,proto3" json:"due_days,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -60,11 +60,11 @@ func (*CreateOrderReq) Descriptor() ([]byte, []int) {
 	return file_order_order_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *CreateOrderReq) GetUserId() int64 {
+func (x *CreateOrderReq) GetUserEmail() string {
 	if x != nil {
-		return x.UserId
+		return x.UserEmail
 	}
-	return 0
+	return ""
 }
 
 func (x *CreateOrderReq) GetBookId() int64 {
@@ -209,9 +209,10 @@ var File_order_order_proto protoreflect.FileDescriptor
 
 const file_order_order_proto_rawDesc = "" +
 	"\n" +
-	"\x11order/order.proto\x12\x05order\"]\n" +
-	"\x0eCreateOrderReq\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12\x17\n" +
+	"\x11order/order.proto\x12\x05order\"c\n" +
+	"\x0eCreateOrderReq\x12\x1d\n" +
+	"\n" +
+	"user_email\x18\x01 \x01(\tR\tuserEmail\x12\x17\n" +
 	"\abook_id\x18\x02 \x01(\x03R\x06bookId\x12\x19\n" +
 	"\bdue_days\x18\x03 \x01(\x05R\adueDays\"+\n" +
 	"\x0eCreateOrderRes\x12\x19\n" +
